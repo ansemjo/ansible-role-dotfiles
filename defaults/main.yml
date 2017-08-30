@@ -1,0 +1,15 @@
+---
+
+dotfiles_remote: https://gitlab.app.rz.semjonov.de/ansemjo/rcfiles.git
+dotfiles_local:  /usr/local/etc/dotfiles
+
+dotfiles_links:
+
+  - file: bash/bashrc
+    link: /etc/bashrc
+
+  - file: vim/vimrc
+    link: /etc/vimrc
+
+  - file: git/gitconfig
+    link: /etc/gitconfig

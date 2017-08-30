@@ -1,0 +1,12 @@
+---
+
+- name: DOTFILES | symlink dotfiles
+  file:
+    state: link
+    force: true
+    src: "{{ dotfiles_local }}/{{ item.file }}"
+    path: "{{ item.link }}"
+
+  with_items: "{{ dotfiles_links }}"
+  loop_control:
+    label: "{{ item.file }}"

@@ -1,0 +1,8 @@
+---
+
+- name: DOTFILES | Checkout latest dotfiles repository
+  git:
+    repo: "{{ dotfiles_remote }}"
+    dest: "{{ dotfiles_local }}"
+    update: true
+    force: true
