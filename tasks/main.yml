@@ -1,4 +1,4 @@
 ---
 
-- include: checkout.yml
-- include: symlink.yml
+- import_tasks: checkout.yml
+- import_tasks: symlink.yml
