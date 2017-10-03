@@ -1,6 +1,6 @@
 ---
 
-dotfiles_remote: https://gitlab.app.rz.semjonov.de/ansemjo/rcfiles.git
+dotfiles_remote: https://gitlab.app.rz.semjonov.de/ansemjo/dotfiles.git
 dotfiles_local:  /usr/local/etc/dotfiles
 
 dotfiles_links:
