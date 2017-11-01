@@ -5,11 +5,14 @@ dotfiles_local:  /usr/local/etc/dotfiles
 
 dotfiles_links:
 
-  - file: bash/bashrc
-    link: /etc/bashrc
+  - file:   bash/bashrc
+    link:   /etc/bashrc
+    debian: /etc/bash.bashrc
 
-  - file: vim/vimrc
-    link: /etc/vimrc
+  - file:   vim/vimrc
+    link:   /etc/vimrc
+    debian: /etc/vim/vimrc
 
-  - file: git/gitconfig
-    link: /etc/gitconfig
+  - file:   git/gitconfig
+    link:   /etc/gitconfig
+    debian: null
