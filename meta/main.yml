@@ -1,0 +1,7 @@
+galaxy_info:
+  author: Anton Semjonov
+  description: Install configuration files from gh:ansemjo/dotfiles
+  license: None yet
+  min_ansible_version: 1.2
+  galaxy_tags: []
+dependencies: []
