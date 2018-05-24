@@ -1,7 +1,7 @@
 galaxy_info:
   author: Anton Semjonov
-  description: Install configuration files from gh:ansemjo/dotfiles
-  license: None yet
+  description: Install configuration files from github:ansemjo/dotfiles
+  license: MIT
   min_ansible_version: 1.2
   galaxy_tags: []
 dependencies: []
