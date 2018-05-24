@@ -1,5 +1,10 @@
 ---
 
+- name: install git
+  package:
+    name: git
+    state: present
+
 - name: DOTFILES | Checkout latest dotfiles repository
   git:
     repo: "{{ dotfiles_remote }}"
