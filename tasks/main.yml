@@ -1,4 +1,36 @@
 ---
 
-- import_tasks: checkout.yml
-- import_tasks: symlink.yml
+- name: install git
+  package:
+    name: git
+    state: present
+
+- name: checkout latest dotfiles repository
+  git:
+    repo: "{{ dotfiles_remote }}"
+    dest: "{{ dotfiles_local }}"
+    update: true
+    force: true
+
+- name: symlink dotfiles
+  file:
+    state: link
+    force: true
+    src: "{{ dotfiles_local }}/{{ item.file }}"
+    path: "{{ item.link }}"
+
+  with_items: "{{ dotfiles_links }}"
+  loop_control:
+    label: "{{ item.file }}"
+
+- name: add debian symlinks
+  file:
+    state: link
+    force: true
+    src: "{{ item.link }}"
+    path: "{{ item.debian }}"
+
+  with_items: "{{ dotfiles_links }}"
+  loop_control:
+    label: "{{ item.debian }}"
+  when: (ansible_os_family == 'Debian') and (item.debian is not none)
