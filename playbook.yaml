@@ -1,0 +1,7 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: configure dotfiles
+  hosts: all
+  become: true
+  roles:
+    - ansemjo.dotfiles
