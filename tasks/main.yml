@@ -1,9 +1,16 @@
 ---
 
+- name: check git availability
+  shell: command -v git >/dev/null 2>&1
+  register: git_exists
+  ignore_errors: true
+  changed_when: false
+
 - name: install git
   package:
     name: git
     state: present
+  when: git_exists is failed
 
 - name: checkout latest dotfiles repository
   git:
