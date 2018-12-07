@@ -1,0 +1,13 @@
+---
+
+__dotfiles_links:
+
+  - file:   bash/bashrc
+    link:   /etc/bash.bashrc
+
+  - file:   vim/vimrc
+    link:   /etc/vim/vimrc
+
+  - file:   git/gitconfig
+    link:   /etc/gitconfig
+

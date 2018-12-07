@@ -1,5 +1,10 @@
 ---
 
+- name: include os-specific defaults
+  include_vars:
+    dir: vars
+    files_matching: "{{ ansible_os_family }}.yml"
+
 - name: check git availability
   shell: command -v git >/dev/null 2>&1
   register: git_exists
@@ -29,15 +34,3 @@
   with_items: "{{ dotfiles_links }}"
   loop_control:
     label: "{{ item.file }}"
-
-- name: add debian symlinks
-  file:
-    state: link
-    force: true
-    src: "{{ item.link }}"
-    path: "{{ item.debian }}"
-
-  with_items: "{{ dotfiles_links }}"
-  loop_control:
-    label: "{{ item.debian }}"
-  when: (ansible_os_family == 'Debian') and (item.debian is not none)

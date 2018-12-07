@@ -1,0 +1,13 @@
+---
+
+# CoreOS has readonly /usr
+__dotfiles_local: /opt/dotfiles
+
+__dotfiles_links:
+
+  - file: bash/bashrc
+    link: /etc/bash/bashrc
+
+  - file: git/gitconfig
+    link: /etc/gitconfig
+

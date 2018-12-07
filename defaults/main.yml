@@ -1,18 +1,20 @@
 ---
 
-dotfiles_remote: https://github.com/ansemjo/dotfiles
-dotfiles_local:  /usr/local/etc/dotfiles
-
-dotfiles_links:
+# defaults which may be os-specific
+__dotfiles_remote: https://github.com/ansemjo/dotfiles
+__dotfiles_local: /usr/local/etc/dotfiles
+__dotfiles_links:
 
   - file:   bash/bashrc
     link:   /etc/bashrc
-    debian: /etc/bash.bashrc
 
   - file:   vim/vimrc
     link:   /etc/vimrc
-    debian: /etc/vim/vimrc
 
   - file:   git/gitconfig
     link:   /etc/gitconfig
-    debian: null
+
+# use actual included or overriden values
+dotfiles_remote: "{{ __dotfiles_remote }}"
+dotfiles_local: "{{ __dotfiles_local }}"
+dotfiles_links: "{{ __dotfiles_links }}"
